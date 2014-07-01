@@ -1,0 +1,29 @@
+<h1>Lista de paises</h1>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Codigo</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @countries.each do |country| %>
+      <tr>
+        <td><%= country.name %></td>
+        <td><%= country.code %></td>
+        <td><%= link_to 'Mostrar', country %></td>
+        <td><%= link_to 'Editar', edit_country_path(country) %></td>
+        <td><%= link_to 'Eliminar', country, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Nuevo Pais', new_country_path %>

@@ -1,5 +1,13 @@
 AkitaThermostat::Application.routes.draw do
 
+  get '/observations/new/:id' => 'observations#new'
+  get '/observations/show/:id' => 'observations#show'
+  get '/observations/like/:id' => 'observations#like'
+  get '/observations/dislike/:id' => 'observations#dislike'
+  resources :observations
+
+  resources :countries
+
   resources :issues
 
   resources :alarms

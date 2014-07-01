@@ -1,0 +1,23 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Info:</strong>
+  <%= @observation.info %>
+</p>
+
+<p>
+	<strong>Fecha:</strong>
+	<%= @observation.created_at %>
+</p>
+
+<p>
+	<a href="/observations/like/<%= @observation.id %>"> Me gusta : </a>
+	<%= @observation.like %>
+</p>
+
+<p>
+	<a href="/observations/dislike/<%= @observation.id %>"> No me gusta </a>
+</p>
+
+<%= link_to 'Edit', edit_observation_path(@observation) %> |
+<%= link_to 'Back', observations_path %>
